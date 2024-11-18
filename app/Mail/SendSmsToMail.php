@@ -37,7 +37,7 @@ class SendSmsToMail extends Mailable
      */
     public function content(): Content
     {
-        $link = route('email.verify') . '?email-verify=' . $this->user->verification_token;
+        $link = route('email.verify') . '?token=' . $this->user->verification_token;
         return new Content(
             view: 'email.send',
             with:[

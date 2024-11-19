@@ -26,7 +26,6 @@ class SendEmailJob implements ShouldQueue
      */
     public function handle(): void
     {
-        Log::info($this->user);
         Mail::to($this->user->email)->send(new SendSmsToMail($this->user));
     }
 }
